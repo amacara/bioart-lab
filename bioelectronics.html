@@ -1,12 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Bioelectronics</title>
+ <style>
+  body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    background: #f7f7f7;
+    color: #333;
+  }
+
+  .green-banner {
+    background-color: black;
+    color: #05ff1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-align: center;
+    text-shadow: 0 0 5px #05ff1a,
+                 0 0 10px #05ff1a,
+                 0 0 20px #05ff1a,
+                 0 0 30px #05ff1a;
+    animation: greenPulse 2s infinite alternate;
+  }
+
+  @keyframes greenPulse {
+    0% {
+      box-shadow: 0 0 10px #05ff1a;
+    }
+    100% {
+      box-shadow: 0 0 30px #05ff1a;
+    }
+  }
+
+  .project-highlight {
+    max-width: 800px;
+    margin: 4rem auto;
+    text-align: center;
+    background: #ffffffcc;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px #05ff1a66;
+  }
+
+  .project-highlight p {
+    font-size: 1.2rem;
+    color: #222;
+  }
+
+  .project-highlight a {
+    font-weight: bold;
+    color: #05ff1a;
+    text-decoration: none;
+    text-shadow: 0 0 3px #05ff1a,
+                 0 0 6px #05ff1a;
+    transition: text-shadow 0.3s ease;
+  }
+
+  .project-highlight a:hover {
+    text-shadow: 0 0 6px #05ff1a,
+                 0 0 12px #05ff1a;
+  }
+</style>
+
 </head>
 <body>
-  <h1>Bioelectronics</h1>
-  <p>This is the Bioelectronics page.</p>
-  <p><a href="index.html">← Back to Home</a></p>
+<div class="green-banner">BIOELECTRONICS</div>
+
+<div class="project-highlight">
+  <p>Explore the intersection of biology and circuitry in our highlighted Maker Faire project:</p>
+  <p><a href="https://www.scopesdf.org/scopesdf_lesson/sensory-circuit-simulation/" target="_blank">Click here for the FREE Sensory Circuit Simulation Lesson Plan!</a></p>
+</div>
+
 </body>
 </html>
