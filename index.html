@@ -15,17 +15,34 @@
       color: #333;
     }
 
-    .banner {
-      background-color: black;
-      color: #ff00d4;
-      font-family: 'Nunito', sans-serif;
-      font-size: 3.5rem;
-      font-weight: 700;
-      text-align: center;
-      padding: 2rem 0;
-      letter-spacing: 0.1em;
-      animation: neonPulse 2s infinite alternate;
-    }
+.banner {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 0;
+  animation: neonPulse 2s infinite alternate;
+}
+
+.banner-text {
+  color: #ff00d4;
+  font-family: 'Nunito', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 5px #ff00d4,
+               0 0 10px #ff00d4,
+               0 0 20px #ff00d4,
+               0 0 30px #ff00d4;
+}
+
+.logo {
+  height: 60px;
+  filter: drop-shadow(0 0 5px #ff00d4)
+          drop-shadow(0 0 10px #ff00d4)
+          drop-shadow(0 0 20px #ff00d4);
+}
 
     @keyframes neonPulse {
       0% {
@@ -108,7 +125,10 @@
 </head>
 <body>
 
-  <div class="banner">BIOART LAB</div>
+<div class="banner">
+  <img src="BioartLabLogo.svg" alt="Bioart Lab Logo" class="logo">
+  <span class="banner-text">BIOART LAB</span>
+</div>
 
   <div class="menu">
     <a href="biomaterials.html" class="bio">Biomaterials</a>
