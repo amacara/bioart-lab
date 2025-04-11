@@ -3,10 +3,119 @@
 <head>
   <meta charset="UTF-8">
   <title>Biomaterials</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      margin: 0;
+      background: #f7f7f7;
+      color: #333;
+    }
+
+    .pink-banner {
+      background-color: black;
+      color: #ff00d4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 0;
+      font-size: 3.5rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-align: center;
+      text-shadow: 0 0 5px #ff00d4,
+                   0 0 10px #ff00d4,
+                   0 0 20px #ff00d4,
+                   0 0 30px #ff00d4;
+      animation: pinkPulse 2s infinite alternate;
+    }
+
+    @keyframes pinkPulse {
+      0% {
+        box-shadow: 0 0 10px #ff00d4;
+      }
+      100% {
+        box-shadow: 0 0 30px #ff00d4;
+      }
+    }
+
+    .menu {
+      background-color: black;
+      text-align: center;
+      padding: 1rem 0;
+      font-family: Arial, sans-serif;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .menu a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      text-transform: uppercase;
+      margin: 0 1.5rem;
+      transition: text-shadow 0.3s ease;
+    }
+
+    .menu a.bio {
+      color: #ff00d4;
+    }
+
+    .menu a.electronics {
+      color: #05ff1a;
+    }
+
+    .menu a.home {
+      color: #ff00d4;
+    }
+
+    .menu a:hover {
+      text-shadow: 0 0 5px currentColor,
+                   0 0 10px currentColor,
+                   0 0 15px currentColor;
+    }
+
+    .biomaterial-highlight {
+      max-width: 800px;
+      margin: 4rem auto;
+      text-align: center;
+      background: #ffffffcc;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 20px #ff00d450;
+    }
+
+    .biomaterial-highlight h2 {
+  color: #ff00d4;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+    }
+
+    .biomaterial-highlight p {
+      color: #444;
+      font-size: 1.1rem;
+    }
+  </style>
 </head>
 <body>
-  <h1>Biomaterials</h1>
-  <p>This is the Biomaterials page.</p>
-  <p><a href="index.html">← Back to Home</a></p>
+
+  <div class="pink-banner">BIOMATERIALS</div>
+
+  <div class="menu">
+    <a href="biochromes.html" class="bio">Biochromes</a>
+    <a href="bioelectronics.html" class="electronics">Bioelectronics</a>
+    <a href="index.html" class="home">Home</a>
+  </div>
+
+  <div class="biomaterial-highlight">
+    <h2>Stay tuned for Biomaterials projects!</h2>
+    <p>✨ This section is coming soon. Projects featuring mycelium-based sculpture, bioplastics, kombucha leather, and other living materials are on the way.</p>
+    <p class="construction">🚧 Reminder: this site is still under construction — thanks for your patience!</p>
+  </div>
+
 </body>
 </html>
