@@ -24,10 +24,21 @@
       text-align: center;
       padding: 2rem 0;
       letter-spacing: 0.1em;
-      text-shadow: 0 0 5px #ff00d4,
-                   0 0 10px #ff00d4,
-                   0 0 20px #ff00d4,
-                   0 0 30px #ff00d4;
+      animation: neonPulse 2s infinite alternate;
+    }
+
+    @keyframes neonPulse {
+      0% {
+        text-shadow: 0 0 5px #ff00d4,
+                     0 0 10px #ff00d4,
+                     0 0 20px #ff00d4;
+      }
+      100% {
+        text-shadow: 0 0 10px #ff00d4,
+                     0 0 20px #ff00d4,
+                     0 0 30px #ff00d4,
+                     0 0 40px #ff00d4;
+      }
     }
 
     h1 {
@@ -48,6 +59,7 @@
 
 </body>
 </html>
+
 
   <h2>Featured Projects</h2>
  <ul>
