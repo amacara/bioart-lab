@@ -23,6 +23,9 @@
   gap: 1rem;
   padding: 2rem 0;
   animation: neonPulse 2s infinite alternate;
+  position: sticky;
+  top: 0;
+  z-index: 101;
 }
 
 .banner-text {
@@ -58,12 +61,16 @@
       }
     }
 
-    .menu {
-      background-color: black;
-      text-align: center;
-      padding: 1rem 0;
-      font-family: Arial, sans-serif;
-    }
+  .menu {
+  background-color: black;
+  text-align: center;
+  padding: 1rem 0;
+  font-family: Arial, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
 
     .menu a {
       text-decoration: none;
@@ -80,6 +87,13 @@
     .menu a.electronics {
       color: #05ff1a;
     }
+
+    .menu a:hover {
+  text-shadow: 0 0 5px currentColor,
+               0 0 10px currentColor,
+               0 0 15px currentColor;
+  transition: text-shadow 0.3s ease;
+}
 
     h1 {
       color: #6a1b9a;
