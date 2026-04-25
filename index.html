@@ -76,8 +76,114 @@
       color: #e8e8e8;
       text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
     }
+.current-section {
+  padding: 5rem 6vw;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(255, 0, 150, 0.13), transparent 28%),
+    radial-gradient(circle at 10% 80%, rgba(57, 255, 20, 0.10), transparent 30%),
+    #050505;
+  color: #f4f4f4;
+}
 
+.current-header {
+  max-width: 850px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #39ff14;
+  text-shadow: 0 0 12px rgba(57, 255, 20, 0.65);
+}
+
+.current-header h2 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1;
+  text-transform: uppercase;
+  color: #f7f7f7;
+}
+
+.current-intro {
+  max-width: 620px;
+  margin: 1.25rem auto 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(244, 244, 244, 0.78);
+}
+
+.current-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.current-card {
+  position: relative;
+  display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #111;
+  text-decoration: none;
+}
+
+.current-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  filter: contrast(1.08) saturate(1.12) brightness(0.85);
+}
+
+.current-card-text {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 2;
+}
+
+.current-card-text span {
+  display: inline-block;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #f7f7f7;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.instagram-link {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.instagram-link a {
+  color: #ff4fd8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
     @media (max-width: 700px) {
+      .current-section {
+  padding: 4rem 1.2rem;
+}
+
+.current-grid {
+  grid-template-columns: 1fr;
+}
+
+.current-card {
+  border-radius: 22px;
+}
       .hero {
         height: 80vh;
         min-height: 440px;
