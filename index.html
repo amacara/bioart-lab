@@ -11,11 +11,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap" rel="stylesheet">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       background: #050505;
+      color: #f4f4f4;
       font-family: "Nunito", Arial, sans-serif;
     }
+
+    img,
+    video {
+      max-width: 100%;
+    }
+
+    /* =========================
+       SECTION 1: HERO
+    ========================= */
 
     .hero {
       position: relative;
@@ -26,6 +44,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      background: #050505;
     }
 
     .hero-video {
@@ -76,134 +95,325 @@
       color: #e8e8e8;
       text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
     }
-.current-section {
-  padding: 5rem 6vw;
-  background:
-    radial-gradient(circle at 85% 20%, rgba(255, 0, 150, 0.13), transparent 28%),
-    radial-gradient(circle at 10% 80%, rgba(57, 255, 20, 0.10), transparent 30%),
-    #050505;
-  color: #f4f4f4;
-}
 
-.current-header {
-  max-width: 850px;
-  margin: 0 auto 3rem;
-  text-align: center;
-}
+    /* =========================
+       SHARED STYLES
+    ========================= */
 
-.eyebrow {
-  margin: 0 0 0.75rem;
-  font-size: 0.8rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: #39ff14;
-  text-shadow: 0 0 12px rgba(57, 255, 20, 0.65);
-}
+    .eyebrow {
+      margin: 0 0 0.75rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #39ff14;
+      text-shadow: 0 0 12px rgba(57, 255, 20, 0.65);
+    }
 
-.current-header h2 {
-  margin: 0;
-  font-size: clamp(2rem, 5vw, 4rem);
-  line-height: 1;
-  text-transform: uppercase;
-  color: #f7f7f7;
-}
+    /* =========================
+       SECTION 2: CURRENTLY ACTIVE
+    ========================= */
 
-.current-intro {
-  max-width: 620px;
-  margin: 1.25rem auto 0;
-  font-size: 1rem;
-  line-height: 1.7;
-  color: rgba(244, 244, 244, 0.78);
-}
+    .current-section {
+      padding: 5rem 6vw;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(255, 0, 150, 0.13), transparent 28%),
+        radial-gradient(circle at 10% 80%, rgba(57, 255, 20, 0.10), transparent 30%),
+        #050505;
+      color: #f4f4f4;
+    }
 
-.current-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
+    .current-header {
+      max-width: 850px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
 
-.current-card {
-  position: relative;
-  display: block;
-  height: 260px; /* 👈 controls size */
-  overflow: hidden;
-  border-radius: 28px;
-  background: #111;
-  text-decoration: none;
-}
+    .current-header h2 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1;
+      text-transform: uppercase;
+      color: #f7f7f7;
+      text-shadow:
+        0 0 12px rgba(255, 0, 150, 0.35),
+        0 0 24px rgba(57, 255, 20, 0.18);
+    }
 
-.current-card img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: contain;
-background: #000;
-  filter: contrast(1.08) saturate(1.12) brightness(0.85);
-}
+    .current-intro {
+      max-width: 620px;
+      margin: 1.25rem auto 0;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(244, 244, 244, 0.78);
+    }
 
-.current-card-text {
-  position: absolute;
-  left: 1rem;
-  bottom: 1rem;
-  z-index: 2;
-}
+    .current-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
 
-.current-card-text span {
-  display: inline-block;
-  padding: 0.55rem 0.8rem;
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.6);
-  color: #f7f7f7;
-  font-size: 0.78rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-    
-.current-card:hover {
-  box-shadow:
-    0 0 20px rgba(255, 0, 150, 0.4),
-    0 0 30px rgba(57, 255, 20, 0.2);
-}
-.instagram-link {
-  text-align: center;
-  margin-top: 2.5rem;
-}
+    .current-card {
+      position: relative;
+      display: block;
+      height: 260px;
+      overflow: hidden;
+      border-radius: 28px;
+      background: #111;
+      text-decoration: none;
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.08),
+        0 20px 50px rgba(0, 0, 0, 0.45);
+      transition: box-shadow 0.35s ease, transform 0.35s ease;
+    }
 
-.instagram-link a {
-  color: #ff4fd8;
-  text-decoration: none;
-  font-size: 0.9rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
+    .current-card img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      background: #000;
+      filter: contrast(1.08) saturate(1.12) brightness(0.85);
+      transition: transform 0.6s ease, filter 0.6s ease;
+    }
+
+    .current-card-text {
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+      z-index: 2;
+    }
+
+    .current-card-text span {
+      display: inline-block;
+      padding: 0.55rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.6);
+      color: #f7f7f7;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      backdrop-filter: blur(10px);
+    }
+
+    .current-card:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        0 0 20px rgba(255, 0, 150, 0.4),
+        0 0 30px rgba(57, 255, 20, 0.2);
+    }
+
+    .current-card:hover img {
+      filter: contrast(1.15) saturate(1.25) brightness(1);
+    }
+
+    .instagram-link {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+
+    .instagram-link a {
+      color: #ff4fd8;
+      text-decoration: none;
+      font-size: 0.9rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-shadow: 0 0 12px rgba(255, 0, 150, 0.55);
+      transition: 0.35s ease;
+    }
+
+    .instagram-link a:hover {
+      color: #39ff14;
+      text-shadow: 0 0 14px rgba(57, 255, 20, 0.75);
+    }
+
+    /* =========================
+       SECTION 3: PRACTICE / IDENTITY
+    ========================= */
+
+    .practice-section {
+      position: relative;
+      padding: 7rem 6vw;
+      background:
+        linear-gradient(180deg, #050505 0%, #0b0509 50%, #050505 100%);
+      color: #f4f4f4;
+      overflow: hidden;
+    }
+
+    .practice-bubble {
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      right: -120px;
+      top: 50%;
+      transform: translateY(-50%);
+      background:
+        radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.2), transparent 18%),
+        radial-gradient(circle at 50% 50%, rgba(255, 0, 150, 0.22), transparent 55%),
+        radial-gradient(circle at 65% 70%, rgba(57, 255, 20, 0.15), transparent 60%);
+      filter: blur(1px);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .practice-content {
+      position: relative;
+      z-index: 2;
+      max-width: 950px;
+      margin: 0 auto;
+    }
+
+    .practice-content h2 {
+      margin: 0;
+      max-width: 900px;
+      font-size: clamp(2rem, 5vw, 4.5rem);
+      line-height: 1.05;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #f7f7f7;
+      text-shadow:
+        0 0 14px rgba(255, 0, 150, 0.32),
+        0 0 28px rgba(57, 255, 20, 0.18);
+    }
+
+    .practice-content p:last-child {
+      max-width: 700px;
+      margin-top: 2rem;
+      font-size: clamp(1rem, 1.6vw, 1.25rem);
+      line-height: 1.8;
+      color: rgba(244, 244, 244, 0.78);
+    }
+
+    /* =========================
+       SECTION 4: FEATURED WORK
+    ========================= */
+
+    .featured-section {
+      padding: 7rem 6vw;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(57, 255, 20, 0.09), transparent 30%),
+        radial-gradient(circle at 90% 85%, rgba(255, 0, 150, 0.11), transparent 35%),
+        #050505;
+      color: #f4f4f4;
+    }
+
+    .featured-header {
+      max-width: 900px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+
+    .featured-header h2 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #f7f7f7;
+      text-shadow:
+        0 0 12px rgba(255, 0, 150, 0.35),
+        0 0 24px rgba(57, 255, 20, 0.18);
+    }
+
+    .featured-grid {
+      max-width: 1150px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .featured-card {
+      position: relative;
+      height: 280px;
+      overflow: hidden;
+      border-radius: 28px;
+      background: #111;
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.08),
+        0 22px 50px rgba(0, 0, 0, 0.42);
+    }
+
+    .featured-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: contrast(1.08) saturate(1.12) brightness(0.82);
+      transition: transform 0.6s ease, filter 0.6s ease;
+    }
+
+    .featured-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.72)),
+        radial-gradient(circle at 25% 20%, rgba(255, 0, 150, 0.18), transparent 34%),
+        radial-gradient(circle at 80% 80%, rgba(57, 255, 20, 0.12), transparent 38%);
+      opacity: 0.75;
+      mix-blend-mode: screen;
+    }
+
+    .featured-card span {
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+      z-index: 2;
+      padding: 0.55rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.6);
+      color: #f7f7f7;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      backdrop-filter: blur(10px);
+    }
+
+    .featured-card:hover img {
+      transform: scale(1.06);
+      filter: contrast(1.15) saturate(1.25) brightness(1);
+    }
+
+    .gallery-button-wrap {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .gallery-button {
+      display: inline-block;
+      padding: 0.9rem 1.25rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 0, 150, 0.55);
+      color: #f7f7f7;
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      background: rgba(255, 0, 150, 0.08);
+      box-shadow:
+        0 0 16px rgba(255, 0, 150, 0.28),
+        0 0 28px rgba(57, 255, 20, 0.12);
+      transition: 0.35s ease;
+    }
+
+    .gallery-button:hover {
+      color: #050505;
+      background: #39ff14;
+      border-color: #39ff14;
+      box-shadow:
+        0 0 18px rgba(57, 255, 20, 0.75),
+        0 0 34px rgba(255, 0, 150, 0.35);
+    }
+
+    /* =========================
+       MOBILE STYLES
+    ========================= */
+
     @media (max-width: 700px) {
-      .current-section {
-  padding: 4rem 1.2rem;
-        .practice-section {
-  padding: 5rem 1.2rem;
-}
-
-.practice-bubble {
-  width: 280px;
-  height: 280px;
-  right: -120px;
-  opacity: 0.55;
-}
-
-.practice-content h2 {
-  font-size: clamp(1.8rem, 10vw, 3rem);
-}
-}
-
-.current-grid {
-  grid-template-columns: 1fr;
-}
-
-.current-card {
-  border-radius: 22px;
-}
       .hero {
         height: 80vh;
         min-height: 440px;
@@ -212,67 +422,43 @@ background: #000;
       .hero-content p {
         letter-spacing: 0.1em;
       }
-      .practice-section {
-  position: relative;
-  padding: 7rem 6vw;
-  background:
-    linear-gradient(180deg, #050505 0%, #0b0509 50%, #050505 100%);
-  color: #f4f4f4;
-  overflow: hidden;
-}
 
-.practice-bubble {
-  position: absolute;
-  width: 420px;
-  height: 420px;
-  border-radius: 50%;
-  right: -120px;
-  top: 50%;
-  transform: translateY(-50%);
-  background:
-    radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.2), transparent 18%),
-    radial-gradient(circle at 50% 50%, rgba(255, 0, 150, 0.22), transparent 55%),
-    radial-gradient(circle at 65% 70%, rgba(57, 255, 20, 0.15), transparent 60%);
-  filter: blur(1px);
-  opacity: 0.8;
-  pointer-events: none;
-}
+      .current-section,
+      .practice-section,
+      .featured-section {
+        padding: 5rem 1.2rem;
+      }
 
-.practice-content {
-  position: relative;
-  z-index: 2;
-  max-width: 950px;
-  margin: 0 auto;
-}
+      .current-grid,
+      .featured-grid {
+        grid-template-columns: 1fr;
+      }
 
-.practice-content h2 {
-  margin: 0;
-  max-width: 900px;
-  font-size: clamp(2rem, 5vw, 4.5rem);
-  line-height: 1.05;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: #f7f7f7;
-  text-shadow:
-    0 0 14px rgba(255, 0, 150, 0.32),
-    0 0 28px rgba(57, 255, 20, 0.18);
-}
+      .current-card,
+      .featured-card {
+        height: 260px;
+        border-radius: 22px;
+      }
 
-.practice-content p:last-child {
-  max-width: 680px;
-  margin-top: 2rem;
-  font-size: clamp(1rem, 1.6vw, 1.25rem);
-  line-height: 1.8;
-  color: rgba(244, 244, 244, 0.78);
-}
+      .practice-bubble {
+        width: 280px;
+        height: 280px;
+        right: -120px;
+        opacity: 0.55;
+      }
+
+      .practice-content h2 {
+        font-size: clamp(1.8rem, 10vw, 3rem);
+      }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- SECTION 1: HERO -->
   <section class="hero">
-    <video class="hero-video" autoplay muted loop playsinline>
+    <video class="hero-video" autoplay muted loop playsinline preload="auto">
       <source src="assets/videos/hero-bioart.mp4" type="video/mp4">
     </video>
 
@@ -283,61 +469,109 @@ background: #000;
       <p>art • biology • electronics</p>
     </div>
   </section>
-  
-<section class="current-section">
-  <div class="current-header">
-    <p class="eyebrow">currently active</p>
-    <h2>process, experiments, and field notes</h2>
-    <p class="current-intro">
-      Recent biomaterial studies, bioelectronics experiments, and works-in-progress from Bioart Lab.
-    </p>
-  </div>
 
-  <div class="current-grid">
+  <!-- SECTION 2: CURRENTLY ACTIVE -->
+  <section class="current-section">
+    <div class="current-header">
+      <p class="eyebrow">currently active</p>
+      <h2>process, experiments, and field notes</h2>
+      <p class="current-intro">
+        Recent biomaterial studies, bioelectronics experiments, and works-in-progress from Bioart Lab.
+      </p>
+    </div>
 
-    <a class="current-card" href="https://www.instagram.com/bio.art.lab" target="_blank">
-      <img src="assets/images/current/bioyarnsamples.jpg" alt="Algae-based bioyarn process">
-      <div class="current-card-text">
-        <span>bioyarn study</span>
+    <div class="current-grid">
+      <a class="current-card" href="https://www.instagram.com/bio.art.lab" target="_blank">
+        <img src="assets/images/current/bioyarnsamples.jpg" alt="Algae-based bioyarn process">
+        <div class="current-card-text">
+          <span>bioyarn study</span>
+        </div>
+      </a>
+
+      <a class="current-card" href="https://www.instagram.com/bio.art.lab" target="_blank">
+        <img src="assets/images/current/myceliumbear.jpg" alt="Mycelium sculpture experimentation">
+        <div class="current-card-text">
+          <span>mycelium sculpture</span>
+        </div>
+      </a>
+
+      <a class="current-card" href="https://www.instagram.com/bio.art.lab" target="_blank">
+        <img src="assets/images/current/bioplasticsamples.jpg" alt="Bioplastic samples">
+        <div class="current-card-text">
+          <span>bioplastics</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="instagram-link">
+      <a href="https://www.instagram.com/bio.art.lab" target="_blank">
+        more process on instagram →
+      </a>
+    </div>
+  </section>
+
+  <!-- SECTION 3: PRACTICE / IDENTITY -->
+  <section class="practice-section">
+    <div class="practice-bubble"></div>
+
+    <div class="practice-content">
+      <p class="eyebrow">practice / identity</p>
+
+      <h2>Bioart Lab is an experimental studio at the intersection of art × biology × electronics.</h2>
+
+      <p>
+        Bioart uses living organisms and biological processes as collaborators in creative work,
+        blurring the boundaries between art and science. Bioart Lab explores biomaterials,
+        pigments, fungi, electronics, and systems that grow, respond, decay, and transform.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 4: FEATURED WORK -->
+  <section class="featured-section">
+    <div class="featured-header">
+      <p class="eyebrow">featured work</p>
+      <h2>selected studies in color, growth, material, and signal</h2>
+    </div>
+
+    <div class="featured-grid">
+      <div class="featured-card">
+        <img src="assets/images/featured/bioplasticelectronics.jpg" alt="Conductive bioplastic">
+        <span>bioplastic electronics</span>
       </div>
-    </a>
 
-    <a class="current-card" href="https://www.instagram.com/bio.art.lab" target="_blank">
-      <img src="assets/images/current/myceliumbear.jpg" alt="Mycelium sculpture experimentation">
-      <div class="current-card-text">
-        <span>mycelium sculpture</span>
+      <div class="featured-card">
+        <img src="assets/images/featured/ataripunkconsole.jpg" alt="Eukaryotic atari punk console">
+        <span>bioelectronics</span>
       </div>
-    </a>
 
-    <a class="current-card" href="https://www.instagram.com/bio.art.lab" target="_blank">
-      <img src="assets/images/current/bioplasticsamples.jpg" alt="Bioplastic samples">
-      <div class="current-card-text">
+      <div class="featured-card">
+        <img src="assets/images/featured/foamandgelatinbear.jpg" alt="Bioplastic bears">
+        <span>bioplastic sculptures</span>
+      </div>
+
+      <div class="featured-card">
+        <img src="assets/images/featured/bioplasticposter.jpg" alt="Bioplastic samples">
         <span>bioplastics</span>
       </div>
-    </a>
 
-  </div>
+      <div class="featured-card">
+        <img src="assets/images/featured/neuroposter.jpg" alt="Touch sensory circuit model">
+        <span>bioelectronics</span>
+      </div>
 
-  <div class="instagram-link">
-    <a href="https://www.instagram.com/bio.art.lab" target="_blank">
-      more process on instagram →
-    </a>
-  </div>
-</section>
-  
-  <section class="practice-section">
-  <div class="practice-bubble"></div>
+      <div class="featured-card">
+        <img src="assets/images/featured/week4.jpg" alt="Naturally pigmented bacteria">
+        <span>bacteria dye</span>
+      </div>
+    </div>
 
-  <div class="practice-content">
-    <p class="eyebrow">practice / identity</p>
+    <div class="gallery-button-wrap">
+      <a class="gallery-button" href="gallery.html">
+        view full gallery →
+      </a>
+    </div>
+  </section>
 
-    <h2>Bioart Lab is an experimental studio at the intersection of art × biology × electronics.</h2>
-
-    <p>
-      Bioart uses living organisms and biological processes as collaborators in creative work, blurring the boundaries between art and science. 
-    </p>
-  </div>
-</section>
-  
 </body>
 </html>
