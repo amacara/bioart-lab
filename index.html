@@ -181,6 +181,20 @@ background: #000;
     @media (max-width: 700px) {
       .current-section {
   padding: 4rem 1.2rem;
+        .practice-section {
+  padding: 5rem 1.2rem;
+}
+
+.practice-bubble {
+  width: 280px;
+  height: 280px;
+  right: -120px;
+  opacity: 0.55;
+}
+
+.practice-content h2 {
+  font-size: clamp(1.8rem, 10vw, 3rem);
+}
 }
 
 .current-grid {
@@ -198,6 +212,59 @@ background: #000;
       .hero-content p {
         letter-spacing: 0.1em;
       }
+      .practice-section {
+  position: relative;
+  padding: 7rem 6vw;
+  background:
+    linear-gradient(180deg, #050505 0%, #0b0509 50%, #050505 100%);
+  color: #f4f4f4;
+  overflow: hidden;
+}
+
+.practice-bubble {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  right: -120px;
+  top: 50%;
+  transform: translateY(-50%);
+  background:
+    radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.2), transparent 18%),
+    radial-gradient(circle at 50% 50%, rgba(255, 0, 150, 0.22), transparent 55%),
+    radial-gradient(circle at 65% 70%, rgba(57, 255, 20, 0.15), transparent 60%);
+  filter: blur(1px);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.practice-content {
+  position: relative;
+  z-index: 2;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.practice-content h2 {
+  margin: 0;
+  max-width: 900px;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #f7f7f7;
+  text-shadow:
+    0 0 14px rgba(255, 0, 150, 0.32),
+    0 0 28px rgba(57, 255, 20, 0.18);
+}
+
+.practice-content p:last-child {
+  max-width: 680px;
+  margin-top: 2rem;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  line-height: 1.8;
+  color: rgba(244, 244, 244, 0.78);
+}
     }
   </style>
 </head>
@@ -255,6 +322,20 @@ background: #000;
     <a href="https://www.instagram.com/bio.art.lab" target="_blank">
       more process on instagram →
     </a>
+  </div>
+</section>
+  
+  <section class="practice-section">
+  <div class="practice-bubble"></div>
+
+  <div class="practice-content">
+    <p class="eyebrow">practice / identity</p>
+
+    <h2>Bioart Lab is an experimental studio at the intersection of art × biology × electronics.</h2>
+
+    <p>
+      Bioart uses living organisms and biological processes as collaborators in creative work, blurring the boundaries between art and science. 
+    </p>
   </div>
 </section>
   
