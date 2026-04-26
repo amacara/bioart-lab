@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Bioart Lab</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background: #050505;
+      color: #f4f4f4;
+      font-family: "Nunito", Arial, sans-serif;
+    }
+
+    .gallery-hero {
+      min-height: 80vh;
+      padding: 6rem 6vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background:
+        radial-gradient(circle at 30% 35%, rgba(255, 0, 150, 0.24), transparent 34%),
+        radial-gradient(circle at 75% 70%, rgba(57, 255, 20, 0.16), transparent 36%),
+        #050505;
+    }
+
+    .gallery-content {
+      max-width: 950px;
+    }
+
+    .eyebrow {
+      margin: 0 0 1rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #39ff14;
+      text-shadow: 0 0 12px rgba(57, 255, 20, 0.65);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 9vw, 7rem);
+      line-height: 0.95;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #f7f7f7;
+      text-shadow:
+        0 0 10px rgba(255, 0, 150, 0.75),
+        0 0 28px rgba(57, 255, 20, 0.28);
+    }
+
+    .intro {
+      max-width: 720px;
+      margin: 2rem auto 0;
+      font-size: clamp(1rem, 1.7vw, 1.25rem);
+      line-height: 1.8;
+      color: rgba(244, 244, 244, 0.78);
+    }
+
+    .placeholder-grid {
+      padding: 5rem 6vw;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .placeholder-card {
+      height: 260px;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 25% 20%, rgba(255, 0, 150, 0.22), transparent 35%),
+        radial-gradient(circle at 75% 80%, rgba(57, 255, 20, 0.15), transparent 38%),
+        #111;
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.08),
+        0 22px 50px rgba(0, 0, 0, 0.42);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .placeholder-card span {
+      color: rgba(244, 244, 244, 0.72);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+
+    .back-link-wrap {
+      text-align: center;
+      padding: 2rem 6vw 6rem;
+    }
+
+    .back-link {
+      color: #ff4fd8;
+      text-decoration: none;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-shadow: 0 0 12px rgba(255, 0, 150, 0.55);
+    }
+
+    .back-link:hover {
+      color: #39ff14;
+    }
+
+    @media (max-width: 700px) {
+      .gallery-hero {
+        min-height: 65vh;
+        padding: 5rem 1.2rem;
+      }
+
+      .placeholder-grid {
+        grid-template-columns: 1fr;
+        padding: 4rem 1.2rem;
+      }
+
+      .placeholder-card {
+        height: 220px;
+        border-radius: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="gallery-hero">
+    <div class="gallery-content">
+      <p class="eyebrow">gallery</p>
+      <h1>Selected Work</h1>
+      <p class="intro">
+        A growing archive of biomaterials, biochromes, fungal studies, bioelectronics,
+        and experimental works from Bioart Lab.
+      </p>
+    </div>
+  </section>
+
+  <section class="placeholder-grid">
+    <div class="placeholder-card">
+      <span>biomaterials</span>
+    </div>
+
+    <div class="placeholder-card">
+      <span>biochromes</span>
+    </div>
+
+    <div class="placeholder-card">
+      <span>bioelectronics</span>
+    </div>
+  </section>
+
+  <div class="back-link-wrap">
+    <a class="back-link" href="index.html">← back to Bioart Lab</a>
+  </div>
+
+</body>
+</html>
