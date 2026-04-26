@@ -1,1 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculum | Bioart Lab</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background: #050505;
+      color: #f4f4f4;
+      font-family: "Nunito", Arial, sans-serif;
+    }
+
+    .curriculum-hero {
+      min-height: 70vh;
+      padding: 6rem 6vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background:
+        radial-gradient(circle at 25% 30%, rgba(255, 0, 150, 0.22), transparent 32%),
+        radial-gradient(circle at 75% 65%, rgba(57, 255, 20, 0.16), transparent 34%),
+        #050505;
+    }
+
+    .curriculum-hero-content {
+      max-width: 950px;
+    }
+
+    .eyebrow {
+      margin: 0 0 1rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #39ff14;
+      text-shadow: 0 0 12px rgba(57, 255, 20, 0.65);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 9vw, 7rem);
+      line-height: 0.95;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #f7f7f7;
+      text-shadow:
+        0 0 10px rgba(255, 0, 150, 0.75),
+        0 0 28px rgba(57, 255, 20, 0.28);
+    }
+
+    .intro {
+      max-width: 720px;
+      margin: 2rem auto 0;
+      font-size: clamp(1rem, 1.7vw, 1.25rem);
+      line-height: 1.8;
+      color: rgba(244, 244, 244, 0.78);
+    }
+
+    .curriculum-section {
+      padding: 5rem 6vw;
+      background: #050505;
+    }
+
+    .section-header {
+      max-width: 850px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+
+    .section-header h2 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 4rem);
+      text-transform: uppercase;
+      line-height: 1.05;
+      color: #f7f7f7;
+    }
+
+    .curriculum-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .curriculum-card {
+      padding: 2rem;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(255, 0, 150, 0.14), transparent 32%),
+        radial-gradient(circle at 85% 85%, rgba(57, 255, 20, 0.10), transparent 36%),
+        #111;
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.08),
+        0 22px 50px rgba(0, 0, 0, 0.42);
+    }
+
+    .curriculum-card h3 {
+      margin: 0 0 1rem;
+      font-size: 1.2rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #ff4fd8;
+    }
+
+    .curriculum-card p {
+      margin: 0;
+      line-height: 1.7;
+      color: rgba(244, 244, 244, 0.76);
+    }
+
+    .resource-list {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .resource-link {
+      display: block;
+      padding: 1.25rem 1.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(57, 255, 20, 0.35);
+      color: #f7f7f7;
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(57, 255, 20, 0.06);
+      transition: 0.35s ease;
+    }
+
+    .resource-link:hover {
+      color: #050505;
+      background: #39ff14;
+      box-shadow: 0 0 18px rgba(57, 255, 20, 0.7);
+    }
+
+    .back-link-wrap {
+      text-align: center;
+      padding: 4rem 6vw 6rem;
+    }
+
+    .back-link {
+      color: #ff4fd8;
+      text-decoration: none;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-shadow: 0 0 12px rgba(255, 0, 150, 0.55);
+    }
+
+    .back-link:hover {
+      color: #39ff14;
+    }
+
+    @media (max-width: 700px) {
+      .curriculum-hero {
+        min-height: 60vh;
+        padding: 5rem 1.2rem;
+      }
+
+      .curriculum-section {
+        padding: 4rem 1.2rem;
+      }
+
+      .curriculum-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .resource-link {
+        border-radius: 24px;
+        line-height: 1.5;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="curriculum-hero">
+    <div class="curriculum-hero-content">
+      <p class="eyebrow">open curriculum</p>
+      <h1>Bioart Curriculum</h1>
+      <p class="intro">
+        Open-source lessons, recipes, and project structures for experimental biology,
+        bioart, biomaterials, fungi, and bioelectronics.
+      </p>
+    </div>
+  </section>
+
+  <section class="curriculum-section">
+    <div class="section-header">
+      <p class="eyebrow">teaching areas</p>
+      <h2>hands-on science through living materials</h2>
+    </div>
+
+    <div class="curriculum-grid">
+      <div class="curriculum-card">
+        <h3>Biomaterials</h3>
+        <p>
+          Recipes and lessons for bioplastics, bioyarn, biopastes, mycelium materials,
+          and other biodegradable material experiments.
+        </p>
+      </div>
+
+      <div class="curriculum-card">
+        <h3>Biochromes</h3>
+        <p>
+          Activities exploring natural pigments, fungal dyes, bacterial color,
+          plant pigments, chromatography, and color as biological process.
+        </p>
+      </div>
+
+      <div class="curriculum-card">
+        <h3>Bioelectronics</h3>
+        <p>
+          Projects connecting circuits, sensors, LEDs, sound, feedback, and biological
+          signals through creative electronics.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="curriculum-section">
+    <div class="section-header">
+      <p class="eyebrow">resources</p>
+      <h2>lesson plans, recipes, and guides</h2>
+    </div>
+
+    <div class="resource-list">
+      <a class="resource-link" href="#">
+        biomaterials recipe library coming soon
+      </a>
+
+      <a class="resource-link" href="#">
+        biochromes lesson collection coming soon
+      </a>
+
+      <a class="resource-link" href="#">
+        bioelectronics project guides coming soon
+      </a>
+    </div>
+  </section>
+
+  <div class="back-link-wrap">
+    <a class="back-link" href="index.html">← back to Bioart Lab</a>
+  </div>
+
+</body>
+</html>
