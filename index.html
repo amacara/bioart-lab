@@ -457,6 +457,59 @@
         0 0 18px rgba(57, 255, 20, 0.75),
         0 0 34px rgba(255, 0, 150, 0.35);
     }
+    .contact-section {
+  padding: 6rem 6vw;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(255, 0, 150, 0.12), transparent 30%),
+    radial-gradient(circle at 50% 80%, rgba(57, 255, 20, 0.10), transparent 35%),
+    #050505;
+  color: #f4f4f4;
+  text-align: center;
+}
+
+.contact-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-section h2 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #f7f7f7;
+  text-shadow:
+    0 0 12px rgba(255, 0, 150, 0.45),
+    0 0 22px rgba(57, 255, 20, 0.25);
+}
+
+.contact-text {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: rgba(244, 244, 244, 0.7);
+}
+
+.contact-links {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-links a {
+  color: #ff4fd8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(255, 0, 150, 0.5);
+  transition: 0.3s ease;
+}
+
+.contact-links a:hover {
+  color: #39ff14;
+  text-shadow: 0 0 14px rgba(57, 255, 20, 0.7);
+}
 
     /* =========================
        MOBILE STYLES
@@ -499,7 +552,11 @@
       .practice-content h2 {
         font-size: clamp(1.8rem, 10vw, 3rem);
       }
+      .contact-section {
+  padding: 4rem 1.2rem;
+}
     }
+    
   </style>
 </head>
 
@@ -633,5 +690,29 @@
     </div>
   </section>
 
+  <section class="contact-section">
+  <div class="contact-content">
+
+    <p class="eyebrow">contact</p>
+
+    <h2>Bioart Lab</h2>
+
+    <p class="contact-text">
+      Venice, California  
+    </p>
+
+    <div class="contact-links">
+      <a href="mailto:bioartlab.studio@gmail.com">
+        bioartlab.studio@gmail.com
+      </a>
+
+      <a href="https://www.instagram.com/bio.art.lab/" target="_blank">
+        instagram
+      </a>
+    </div>
+
+  </div>
+</section>
+  
 </body>
 </html>
