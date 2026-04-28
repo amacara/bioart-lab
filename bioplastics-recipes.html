@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bioplastics Recipes | Bioart Lab</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background: #050505;
+      color: #f4f4f4;
+      font-family: "Nunito", Arial, sans-serif;
+    }
+
+    .recipe-hero {
+      min-height: 70vh;
+      padding: 6rem 6vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background:
+        radial-gradient(circle at 25% 30%, rgba(255, 0, 150, 0.24), transparent 32%),
+        radial-gradient(circle at 75% 70%, rgba(57, 255, 20, 0.16), transparent 36%),
+        #050505;
+    }
+
+    .recipe-hero-content {
+      max-width: 950px;
+    }
+
+    .eyebrow {
+      margin: 0 0 1rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #39ff14;
+      text-shadow: 0 0 12px rgba(57, 255, 20, 0.65);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 9vw, 7rem);
+      line-height: 0.95;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #f7f7f7;
+      text-shadow:
+        0 0 10px rgba(255, 0, 150, 0.75),
+        0 0 28px rgba(57, 255, 20, 0.28);
+    }
+
+    .intro {
+      max-width: 760px;
+      margin: 2rem auto 0;
+      font-size: clamp(1rem, 1.7vw, 1.25rem);
+      line-height: 1.8;
+      color: rgba(244, 244, 244, 0.78);
+    }
+
+    .recipe-section {
+      padding: 5rem 6vw;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(255, 0, 150, 0.10), transparent 30%),
+        radial-gradient(circle at 15% 85%, rgba(57, 255, 20, 0.08), transparent 36%),
+        #050505;
+    }
+
+    .recipe-card {
+      max-width: 1050px;
+      margin: 0 auto;
+      border-radius: 34px;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(255, 0, 150, 0.10), rgba(57, 255, 20, 0.06)),
+        #111;
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.08),
+        0 24px 60px rgba(0, 0, 0, 0.5),
+        0 0 28px rgba(255, 0, 150, 0.14);
+    }
+
+    .recipe-card-header {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 0;
+    }
+
+    .recipe-title-area {
+      padding: 3rem;
+    }
+
+    .recipe-title-area h2 {
+      margin: 0;
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #f7f7f7;
+      text-shadow:
+        0 0 12px rgba(255, 0, 150, 0.55),
+        0 0 24px rgba(57, 255, 20, 0.22);
+    }
+
+    .recipe-summary {
+      margin-top: 1.4rem;
+      max-width: 620px;
+      line-height: 1.8;
+      color: rgba(244, 244, 244, 0.78);
+    }
+
+    .recipe-image-placeholder {
+      min-height: 340px;
+      background:
+        radial-gradient(circle at 35% 30%, rgba(255, 0, 150, 0.26), transparent 34%),
+        radial-gradient(circle at 70% 75%, rgba(57, 255, 20, 0.16), transparent 36%),
+        #080808;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .recipe-image-placeholder span {
+      color: rgba(244, 244, 244, 0.62);
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    /* Later, when you add a photo, replace the placeholder div with:
+       <img class="recipe-image" src="assets/images/recipes/bioyarn.jpg" alt="Bioyarn samples">
+    */
+    .recipe-image {
+      width: 100%;
+      height: 100%;
+      min-height: 340px;
+      display: block;
+      object-fit: cover;
+      filter: contrast(1.08) saturate(1.12) brightness(0.86);
+    }
+
+    .recipe-content {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 2rem;
+      padding: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .recipe-block {
+      padding: 1.5rem;
+      border-radius: 24px;
+      background: rgba(0, 0, 0, 0.26);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+    }
+
+    .recipe-block h3 {
+      margin: 0 0 1rem;
+      color: #ff4fd8;
+      font-size: 1rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    ul, ol {
+      margin: 0;
+      padding-left: 1.25rem;
+      line-height: 1.8;
+      color: rgba(244, 244, 244, 0.78);
+    }
+
+    li + li {
+      margin-top: 0.35rem;
+    }
+
+    .safety-note {
+      max-width: 1050px;
+      margin: 2rem auto 0;
+      padding: 1.5rem;
+      border-radius: 24px;
+      background: rgba(255, 0, 150, 0.07);
+      border: 1px solid rgba(255, 0, 150, 0.22);
+      color: rgba(244, 244, 244, 0.78);
+      line-height: 1.7;
+    }
+
+    .safety-note strong {
+      color: #39ff14;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.85rem;
+    }
+
+    .safety-note a {
+      color: #ff4fd8;
+      text-decoration: none;
+      text-shadow: 0 0 10px rgba(255, 0, 150, 0.45);
+    }
+
+    .safety-note a:hover {
+      color: #39ff14;
+    }
+
+    .back-link-wrap {
+      text-align: center;
+      padding: 2rem 6vw 6rem;
+    }
+
+    .back-link {
+      color: #ff4fd8;
+      text-decoration: none;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-shadow: 0 0 12px rgba(255, 0, 150, 0.55);
+    }
+
+    .back-link:hover {
+      color: #39ff14;
+    }
+
+    @media (max-width: 800px) {
+      .recipe-hero {
+        min-height: 60vh;
+        padding: 5rem 1.2rem;
+      }
+
+      .recipe-section {
+        padding: 4rem 1.2rem;
+      }
+
+      .recipe-card-header,
+      .recipe-content {
+        grid-template-columns: 1fr;
+      }
+
+      .recipe-title-area,
+      .recipe-content {
+        padding: 2rem;
+      }
+
+      .recipe-image-placeholder {
+        min-height: 240px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="recipe-hero">
+    <div class="recipe-hero-content">
+      <p class="eyebrow">recipes / biomaterials</p>
+      <h1>Bioplastics Recipes</h1>
+      <p class="intro">
+        A growing collection of classroom-friendly biomaterial recipes for bioart,
+        biofabrication, and experimental making.
+      </p>
+    </div>
+  </section>
+
+  <section class="recipe-section">
+    <article class="recipe-card">
+      <div class="recipe-card-header">
+        <div class="recipe-title-area">
+          <p class="eyebrow">recipe 01</p>
+          <h2>Bioyarn</h2>
+          <p class="recipe-summary">
+            An alginate-based bioyarn made by extruding sodium alginate into a calcium
+            chloride bath. This recipe can be adapted with food coloring or natural pigments.
+          </p>
+        </div>
+
+        <div class="recipe-image-placeholder">
+          <span>final product image coming soon</span>
+        </div>
+      </div>
+
+      <div class="recipe-content">
+        <div class="recipe-block">
+          <h3>Materials</h3>
+          <ul>
+            <li>6 g sodium alginate powder</li>
+            <li>10 g glycerine</li>
+            <li>200 mL water</li>
+            <li>5 g vegetable oil</li>
+            <li>Optional: food coloring or natural pigments</li>
+            <li>Syringe or squeeze bottle</li>
+            <li>Calcium chloride solution bath</li>
+            <li>Clean water bath for washing</li>
+            <li>PPE: gloves and eye protection</li>
+          </ul>
+        </div>
+
+        <div class="recipe-block">
+          <h3>Process</h3>
+          <ol>
+            <li>Blend sodium alginate powder, glycerine, water, vegetable oil, and optional color until smooth.</li>
+            <li>Store the alginate mixture in the fridge overnight to reduce bubbles.</li>
+            <li>Separately prepare a calcium chloride bath by dissolving 30 g calcium chloride in 1000 mL water.</li>
+            <li>Fill a syringe or squeeze bottle with the sodium alginate mixture.</li>
+            <li>Extrude the alginate mixture in a long noodle into the calcium chloride bath.</li>
+            <li>Let the alginate noodle sit in the calcium chloride bath for about 1 minute.</li>
+            <li>Transfer the bioyarn to a clean water bath to wash off excess calcium chloride.</li>
+            <li>Remove, arrange, and dry as desired.</li>
+          </ol>
+        </div>
+      </div>
+    </article>
+
+    <div class="safety-note">
+      <strong>Safety note:</strong>
+      Calcium chloride solutions can irritate skin and eyes. Wear gloves and eye protection, wash hands after handling,
+      and avoid splashes. See an example
+      <a href="https://www.fishersci.com/store/msds?countryCode=US&language=en&partNumber=C79500&productDescription=CAL+CHLORIDE+DIHYD+CR+ACS+500G&vendorId=VN00033897" target="_blank">
+        calcium chloride SDS
+      </a>
+      before running this activity.
+    </div>
+  </section>
+
+  <div class="back-link-wrap">
+    <a class="back-link" href="curriculum.html">← back to curriculum</a>
+  </div>
+
+</body>
+</html>
