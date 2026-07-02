@@ -98,6 +98,33 @@
       text-align: center;
     }
 
+    .profile-photo {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  margin: 0 auto 2rem;
+
+  border-radius: 50%;
+
+  border: 2px solid rgba(255,0,150,.45);
+
+  box-shadow:
+    0 0 0 6px rgba(255,255,255,.03),
+    0 0 35px rgba(255,0,150,.35),
+    0 0 70px rgba(57,255,20,.15);
+
+  transition: .35s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.02);
+  box-shadow:
+    0 0 45px rgba(255,0,150,.45),
+    0 0 80px rgba(57,255,20,.20);
+}
+
     .bio-text {
       max-width: 760px;
       margin: 2rem auto 0;
@@ -346,7 +373,18 @@
 
   <section class="about-section">
     <div class="about-card">
-      <p class="eyebrow">founded by Ann Marie Macara</p>
+   <div class="about-card">
+
+  <img
+    class="profile-photo"
+    src="assets/images/about/AnnMarieMacaraProfilePic.jpg"
+    alt="Portrait of Ann Marie Macara">
+
+  <p class="eyebrow">Founded by Ann Marie Macara</p>
+
+  <h2>Bioartist • Neuroscientist • Educator</h2>
+
+  ...
       <h2>What if we discovered that science is as creative as art?</h2>
 
       <p class="bio-text">
