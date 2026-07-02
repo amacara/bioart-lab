@@ -60,10 +60,9 @@
   position: fixed;
   top: 1.2rem;
   left: 1.5rem;
-  z-index: 999;
+  z-index: 1000;
   width: 48px;
   height: 48px;
-  pointer-events: none;
 }
 
 .site-logo img {
@@ -127,14 +126,25 @@
         0 0 36px rgba(255, 0, 150, 0.35);
     }
 
-    .hero-content p {
-      margin-top: 1rem;
-      font-size: clamp(0.9rem, 2vw, 1.25rem);
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #e8e8e8;
-      text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
-    }
+    .hero-tagline {
+  margin-top: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1.25rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #e8e8e8;
+  text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+}
+
+.hero-description {
+  max-width: 720px;
+  margin: 1.8rem auto 0;
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  text-transform: none;
+  color: rgba(244, 244, 244, 0.82);
+  text-shadow: 0 0 12px rgba(255, 0, 150, 0.18);
+}
 
     /* =========================
        SHARED STYLES
