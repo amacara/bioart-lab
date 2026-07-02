@@ -30,7 +30,42 @@
     video {
       max-width: 100%;
     }
+.main-nav {
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
 
+  z-index: 100;
+
+  display: flex;
+  gap: 2rem;
+}
+
+.main-nav a {
+
+  text-decoration: none;
+
+  color: rgba(255,255,255,.82);
+
+  font-size: .9rem;
+
+  letter-spacing: .18em;
+
+  text-transform: uppercase;
+
+  transition: .3s ease;
+
+  text-shadow: 0 0 10px rgba(255,0,150,.25);
+}
+
+.main-nav a:hover {
+
+  color: #39ff14;
+
+  text-shadow:
+    0 0 12px rgba(57,255,20,.7),
+    0 0 18px rgba(255,0,150,.25);
+}
     /* =========================
        SECTION 1: HERO
     ========================= */
@@ -540,7 +575,24 @@
         height: 80vh;
         min-height: 440px;
       }
+.main-nav {
 
+  top: 1.25rem;
+  right: 1.25rem;
+
+  gap: 1rem;
+
+  flex-wrap: wrap;
+
+  justify-content: flex-end;
+}
+
+.main-nav a {
+
+  font-size: .75rem;
+
+  letter-spacing: .1em;
+}
       .hero-content p {
         letter-spacing: 0.1em;
       }
@@ -590,6 +642,22 @@
 </head>
 
 <body>
+
+  <nav class="main-nav">
+
+  <a href="about.html">About</a>
+
+  <a href="curriculum.html">Curriculum</a>
+
+  <a href="work.html">Gallery</a>
+
+  <a href="https://www.instagram.com/bio.art.lab/" target="_blank">
+    Instagram
+  </a>
+
+</nav>
+
+<section class="hero">
   
 <div class="site-logo">
   <img src="assets/images/logo.png" alt="Bioart Lab logo">
