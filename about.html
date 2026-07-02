@@ -160,23 +160,55 @@
       color: rgba(244, 244, 244, 0.76);
     }
 
-    .resume-list {
-      max-width: 850px;
-      margin: 0 auto;
-      display: grid;
-      gap: 1rem;
-    }
+    .cv-card {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 3rem;
+  border-radius: 34px;
+  background:
+    linear-gradient(135deg, rgba(255, 0, 150, 0.10), rgba(57, 255, 20, 0.06)),
+    #111;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 24px 60px rgba(0, 0, 0, 0.5),
+    0 0 28px rgba(255, 0, 150, 0.14);
+}
 
-    .resume-item {
-      padding: 1.25rem 1.5rem;
-      border-radius: 999px;
-      border: 1px solid rgba(57, 255, 20, 0.28);
-      background: rgba(57, 255, 20, 0.05);
-      color: rgba(244, 244, 244, 0.82);
-      text-align: center;
-      letter-spacing: 0.04em;
-      line-height: 1.5;
-    }
+.cv-group {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.cv-group:last-child {
+  border-bottom: none;
+}
+
+.cv-group h3 {
+  margin: 0 0 0.75rem;
+  color: #ff4fd8;
+  font-size: 1rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.cv-group p,
+.cv-group li {
+  color: rgba(244, 244, 244, 0.78);
+  line-height: 1.75;
+}
+
+.cv-group p {
+  margin: 0;
+}
+
+.cv-group ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.cv-group strong {
+  color: #f7f7f7;
+}
 
     .selected-list {
       max-width: 850px;
@@ -291,9 +323,10 @@
         grid-template-columns: 1fr;
       }
 
-      .resume-item {
-        border-radius: 24px;
-      }
+      .cv-card {
+  padding: 2rem;
+  border-radius: 24px;
+}
     }
   </style>
 </head>
@@ -356,33 +389,48 @@ I am a bioartist, neuroscientist, and educator exploring how art can transform o
     </div>
   </section>
 
-  <section class="grid-section">
-    <div class="section-header">
-      <p class="eyebrow">teaching + background</p>
-      <h2>science education through making</h2>
+ <section class="grid-section cv-section">
+  <div class="section-header">
+    <p class="eyebrow">background / cv</p>
+    <h2>science education through making</h2>
+  </div>
+
+  <div class="cv-card">
+
+    <div class="cv-group">
+      <h3>Education</h3>
+      <p>Ph.D., Molecular, Cellular, and Developmental Biology (Neuroscience), University of Michigan</p>
     </div>
 
-    <div class="resume-list">
-      <div class="resume-item">Ph.D. in Neuroscience from the University of Michigan</div>
-      <div class="resume-item">Honors BSc in Animal Physiology with a minor in Visual Studies from the University of Toronto</div>
-      <div class="resume-item">Seven years of teaching experience across biology, biotechnology, and neuroscience</div>
-      <div class="resume-item">Developer of Advanced Biology, Biotechnology, and Neuroscience curricula</div>
-      <div class="resume-item">Founder of Bioart Lab, an evolving studio for bioart, biomaterials, and experimental pedagogy</div>
-    </div>
-  </section>
-
-  <section class="grid-section">
-    <div class="section-header">
-      <p class="eyebrow">selected work</p>
-      <h2>exhibitions, events, and community practice</h2>
+    <div class="cv-group">
+      <h3>Professional Experience</h3>
+      <p>
+        <strong>Upper School Science Teacher, Wildwood School, Los Angeles</strong> (2020–present)<br>
+        Develop and teach interdisciplinary biology and neuroscience courses; currently developing a high school mycology course integrating fungal biology, cultivation, bioart, and inquiry-based learning.
+      </p>
     </div>
 
-    <div class="selected-list">
-      <div class="selected-item">Student biomaterials and bioart work submitted to <em>Material Acts: Experimentation in Architecture and Design</em>, part of Getty PST ART at Craft Contemporary.</div>
-      <div class="selected-item">Bioart Lab workshops and community demonstrations exploring DIY bioplastics, biomaterials, and biofabrication.</div>
-      <div class="selected-item">Maker Faire and public STEM/STEAM events connecting biology, art, electronics, and hands-on experimentation.</div>
+    <div class="cv-group">
+      <h3>Fellowships + Professional Development</h3>
+      <ul>
+        <li>Wildwood School Outreach Fellow (2026–2028) — Developing a Bioartist-in-Residence program</li>
+        <li>Chevron Fab STEM Fellow (2024)</li>
+        <li>Fabricademy (2023–2024)</li>
+      </ul>
     </div>
-  </section>
+
+    <div class="cv-group">
+      <h3>Selected Talks + Workshops</h3>
+      <ul>
+        <li>Los Angeles Mycological Society — Bioart &amp; Mycology (2026)</li>
+        <li>FAB24, Mexico — Bioart &amp; Science Education (2024)</li>
+        <li>Exploring Bioart: DIY Bioplastics Workshop, Wildwood School (2026)</li>
+        <li>Mycology for Makers Workshop, Crash Space (2026)</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
 
   <section class="cta-section">
     <p class="eyebrow">connect</p>
