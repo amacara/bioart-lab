@@ -31,40 +31,27 @@
       max-width: 100%;
     }
 .main-nav {
-  position: absolute;
-  top: 2rem;
-  right: 3rem;
-
-  z-index: 100;
-
+  position: fixed;
+  top: 1.6rem;
+  right: 2rem;
+  z-index: 999;
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .main-nav a {
-
+  color: rgba(255, 255, 255, 0.82);
   text-decoration: none;
-
-  color: rgba(255,255,255,.82);
-
-  font-size: .9rem;
-
-  letter-spacing: .18em;
-
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-
-  transition: .3s ease;
-
-  text-shadow: 0 0 10px rgba(255,0,150,.25);
+  text-shadow: 0 0 10px rgba(255, 0, 150, 0.35);
+  transition: 0.3s ease;
 }
 
 .main-nav a:hover {
-
   color: #39ff14;
-
-  text-shadow:
-    0 0 12px rgba(57,255,20,.7),
-    0 0 18px rgba(255,0,150,.25);
+  text-shadow: 0 0 14px rgba(57, 255, 20, 0.7);
 }
     /* =========================
        SECTION 1: HERO
@@ -575,24 +562,20 @@
         height: 80vh;
         min-height: 440px;
       }
+
 .main-nav {
-
-  top: 1.25rem;
-  right: 1.25rem;
-
-  gap: 1rem;
-
+  top: 1.2rem;
+  right: 1rem;
+  gap: 0.8rem;
   flex-wrap: wrap;
-
   justify-content: flex-end;
 }
 
 .main-nav a {
-
-  font-size: .75rem;
-
-  letter-spacing: .1em;
-}
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+}      
+     
       .hero-content p {
         letter-spacing: 0.1em;
       }
@@ -643,19 +626,20 @@
 
 <body>
 
-  <nav class="main-nav">
+ <body>
 
-  <a href="about.html">About</a>
-
-  <a href="curriculum.html">Curriculum</a>
-
-  <a href="work.html">Gallery</a>
-
-  <a href="https://www.instagram.com/bio.art.lab/" target="_blank">
-    Instagram
+  <a href="index.html" class="site-logo">
+    <img src="assets/images/logo.png" alt="Bioart Lab logo">
   </a>
 
-</nav>
+  <nav class="main-nav">
+    <a href="about.html">About</a>
+    <a href="curriculum.html">Curriculum</a>
+    <a href="work.html">Work</a>
+    <a href="https://www.instagram.com/bio.art.lab/" target="_blank">Instagram</a>
+  </nav>
+
+  <section class="hero">
 
 <section class="hero">
   
