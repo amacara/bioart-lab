@@ -324,7 +324,11 @@
       .gallery-info p {
         opacity: 1;
       }
-     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    }
+  </style>
+</head>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
   <button class="lightbox-close" onclick="event.stopPropagation(); closeLightbox()">×</button>
   <img id="lightbox-img" src="" alt="">
   <p id="lightbox-caption"></p>
@@ -345,10 +349,7 @@
     document.getElementById('lightbox').classList.remove('active');
   }
 </script>
-    }
-  </style>
-</head>
-
+  
 <body>
 
   <header class="site-header">
