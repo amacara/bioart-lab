@@ -20,18 +20,26 @@
     }
 
     .site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.25rem 1.5rem;
-      background: linear-gradient(to bottom, rgba(5,5,5,.75), rgba(5,5,5,0));
-      backdrop-filter: blur(8px);
-    }
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0; /* important */
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1.25rem 1.5rem;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(5, 5, 5, 0.75),
+    rgba(5, 5, 5, 0)
+  );
+
+  backdrop-filter: blur(8px);
+}
 
     .site-logo {
       display: flex;
@@ -56,14 +64,26 @@
     }
 
     .main-nav {
-      display: flex;
-      gap: 1.1rem;
-      align-items: center;
-      flex-wrap: nowrap;
-    }
-.gallery-card {
-  cursor: pointer;
+  display: flex;
+  gap: 1.1rem;
+  align-items: center;
+  flex-wrap: nowrap;
 }
+
+.main-nav a {
+  text-decoration: none;
+  color: rgba(255,255,255,.82);
+  text-transform: uppercase;
+  font-size: .72rem;
+  letter-spacing: .12em;
+  transition: .25s;
+  white-space: nowrap;
+}
+
+    .main-nav a:hover {
+      color: #39ff14;
+      text-shadow: 0 0 12px rgba(57,255,20,.7);
+    }
 
 .lightbox {
   position: fixed;
@@ -111,19 +131,6 @@
   cursor: pointer;
   text-shadow: 0 0 14px rgba(255, 0, 150, 0.75);
 }
-    .main-nav a {
-      text-decoration: none;
-      color: rgba(255,255,255,.82);
-      text-transform: uppercase;
-      font-size: .72rem;
-      letter-spacing: .12em;
-      white-space: nowrap;
-    }
-
-    .main-nav a:hover {
-      color: #39ff14;
-      text-shadow: 0 0 12px rgba(57,255,20,.7);
-    }
 
     .gallery-hero {
       min-height: 65vh;
