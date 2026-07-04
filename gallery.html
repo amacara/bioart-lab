@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery | Bioart Lab</title>
+  <title>Work | Bioart Lab</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap" rel="stylesheet">
 
   <style>
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
       background: #050505;
@@ -17,28 +19,66 @@
       font-family: "Nunito", Arial, sans-serif;
     }
 
-    .site-logo {
-  position: fixed;
-  top: 1.2rem;
-  left: 1.5rem;
-  z-index: 999;
-  width: 48px;
-  height: 48px;
-  pointer-events: none;
-}
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 1.5rem;
+      background: linear-gradient(to bottom, rgba(5,5,5,.75), rgba(5,5,5,0));
+      backdrop-filter: blur(8px);
+    }
 
-.site-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  filter:
-    drop-shadow(0 0 10px rgba(255, 0, 150, 0.8))
-    drop-shadow(0 0 18px rgba(255, 0, 150, 0.4));
-  opacity: 0.9;
-}
+    .site-logo {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      text-decoration: none;
+    }
+
+    .site-logo img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 10px rgba(255,0,150,.7));
+    }
+
+    .site-logo span {
+      color: white;
+      font-size: .9rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .main-nav {
+      display: flex;
+      gap: 1.1rem;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: rgba(255,255,255,.82);
+      text-transform: uppercase;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      white-space: nowrap;
+    }
+
+    .main-nav a:hover {
+      color: #39ff14;
+      text-shadow: 0 0 12px rgba(57,255,20,.7);
+    }
+
     .gallery-hero {
-      min-height: 80vh;
-      padding: 6rem 6vw;
+      min-height: 65vh;
+      padding: 8rem 6vw 5rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -82,70 +122,158 @@
       color: rgba(244, 244, 244, 0.78);
     }
 
-    .placeholder-grid {
-      padding: 5rem 6vw;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .placeholder-card {
-      height: 260px;
-      border-radius: 28px;
+    .gallery-grid-section {
+      padding: 5rem 6vw 7rem;
       background:
-        radial-gradient(circle at 25% 20%, rgba(255, 0, 150, 0.22), transparent 35%),
-        radial-gradient(circle at 75% 80%, rgba(57, 255, 20, 0.15), transparent 38%),
-        #111;
+        radial-gradient(circle at 15% 20%, rgba(57,255,20,.08), transparent 28%),
+        radial-gradient(circle at 90% 85%, rgba(255,0,150,.10), transparent 32%),
+        #050505;
+    }
+
+    .gallery-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+
+    .gallery-card {
+      position: relative;
+      min-height: 300px;
+      overflow: hidden;
+      border-radius: 28px;
+      background: #111;
       box-shadow:
-        0 0 0 1px rgba(255, 255, 255, 0.08),
-        0 22px 50px rgba(0, 0, 0, 0.42);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 1.5rem;
+        0 0 0 1px rgba(255,255,255,.08),
+        0 22px 50px rgba(0,0,0,.42);
     }
 
-    .placeholder-card span {
-      color: rgba(244, 244, 244, 0.72);
-      letter-spacing: 0.14em;
+    .gallery-card.tall {
+      grid-row: span 2;
+      min-height: 625px;
+    }
+
+    .gallery-card.wide {
+      grid-column: span 2;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      filter: contrast(1.08) saturate(1.12) brightness(.86);
+      transition: transform .6s ease, filter .6s ease;
+    }
+
+    .gallery-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, transparent 35%, rgba(0,0,0,.82)),
+        radial-gradient(circle at 25% 20%, rgba(255,0,150,.18), transparent 34%),
+        radial-gradient(circle at 80% 80%, rgba(57,255,20,.12), transparent 38%);
+      opacity: .55;
+      transition: opacity .4s ease;
+    }
+
+    .gallery-info {
+      position: absolute;
+      left: 1rem;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 2;
+      transform: translateY(.4rem);
+      transition: .35s ease;
+    }
+
+    .gallery-info h2 {
+      margin: 0;
+      font-size: .95rem;
+      letter-spacing: .14em;
       text-transform: uppercase;
-      font-size: 0.8rem;
+      color: #f7f7f7;
     }
 
-    .back-link-wrap {
-      text-align: center;
-      padding: 2rem 6vw 6rem;
+    .gallery-info p {
+      margin: .5rem 0 0;
+      line-height: 1.5;
+      font-size: .85rem;
+      color: rgba(244,244,244,.72);
+      opacity: 0;
+      transition: .35s ease;
     }
 
-    .back-link {
-      color: #ff4fd8;
-      text-decoration: none;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      text-shadow: 0 0 12px rgba(255, 0, 150, 0.55);
+    .gallery-card:hover img {
+      transform: scale(1.06);
+      filter: contrast(1.15) saturate(1.25) brightness(1);
     }
 
-    .back-link:hover {
-      color: #39ff14;
+    .gallery-card:hover::after {
+      opacity: .9;
+    }
+
+    .gallery-card:hover .gallery-info {
+      transform: translateY(0);
+    }
+
+    .gallery-card:hover .gallery-info p {
+      opacity: 1;
+    }
+
+    @media (max-width: 950px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-card.wide {
+        grid-column: span 2;
+      }
     }
 
     @media (max-width: 700px) {
+      .site-header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .main-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: .9rem;
+      }
+
+      .main-nav a {
+        font-size: .65rem;
+      }
+
       .gallery-hero {
-        min-height: 65vh;
-        padding: 5rem 1.2rem;
+        min-height: 60vh;
+        padding: 8rem 1.2rem 4rem;
       }
 
-      .placeholder-grid {
+      .gallery-grid-section {
+        padding: 4rem 1.2rem 5rem;
+      }
+
+      .gallery-grid {
         grid-template-columns: 1fr;
-        padding: 4rem 1.2rem;
       }
 
-      .placeholder-card {
-        height: 220px;
-        border-radius: 22px;
+      .gallery-card,
+      .gallery-card.tall {
+        min-height: 320px;
+      }
+
+      .gallery-card.wide {
+        grid-column: span 1;
+      }
+
+      .gallery-info p {
+        opacity: 1;
       }
     }
   </style>
@@ -153,13 +281,23 @@
 
 <body>
 
-  <div class="site-logo">
-  <img src="assets/images/logo.png" alt="Bioart Lab logo">
-</div>
+  <header class="site-header">
+    <a href="index.html" class="site-logo">
+      <img src="assets/images/logo.png" alt="Bioart Lab">
+      <span>Bioart Lab</span>
+    </a>
+
+    <nav class="main-nav">
+      <a href="about.html">About</a>
+      <a href="gallery.html">Work</a>
+      <a href="curriculum.html">Curriculum</a>
+      <a href="bioplastics-recipes.html">Recipes</a>
+    </nav>
+  </header>
 
   <section class="gallery-hero">
     <div class="gallery-content">
-      <p class="eyebrow">gallery</p>
+      <p class="eyebrow">work / archive</p>
       <h1>Selected Work</h1>
       <p class="intro">
         A growing archive of biomaterials, biochromes, fungal studies, bioelectronics,
@@ -168,23 +306,75 @@
     </div>
   </section>
 
-  <section class="placeholder-grid">
-    <div class="placeholder-card">
-      <span>biomaterials</span>
-    </div>
+  <section class="gallery-grid-section">
+    <div class="gallery-grid">
 
-    <div class="placeholder-card">
-      <span>biochromes</span>
-    </div>
+      <article class="gallery-card tall">
+        <img src="assets/images/gallery/BearVariety.jpg" alt="Assorted biomaterial bear sculptures">
+        <div class="gallery-info">
+          <h2>Bear Studies</h2>
+          <p>Small biomaterial sculptures exploring texture, color, and recipe variation.</p>
+        </div>
+      </article>
 
-    <div class="placeholder-card">
-      <span>bioelectronics</span>
+      <article class="gallery-card wide">
+        <img src="assets/images/gallery/BioartLabSign.jpg" alt="Bioart Lab sign">
+        <div class="gallery-info">
+          <h2>Bioart Lab Sign</h2>
+          <p>A visual marker for the studio practice and workshop space.</p>
+        </div>
+      </article>
+
+      <article class="gallery-card">
+        <img src="assets/images/gallery/GelatinBear.jpg" alt="Gelatin bioplastic bear">
+        <div class="gallery-info">
+          <h2>Gelatin Bear</h2>
+          <p>Cast gelatin bioplastic study using flexible biomaterial recipes.</p>
+        </div>
+      </article>
+
+      <article class="gallery-card">
+        <img src="assets/images/gallery/MushroomPigment.jpg" alt="Mushroom pigment experiment">
+        <div class="gallery-info">
+          <h2>Mushroom Pigment</h2>
+          <p>Color study using fungal pigments and natural dye processes.</p>
+        </div>
+      </article>
+
+      <article class="gallery-card wide">
+        <img src="assets/images/gallery/NaturalPigmentPainting.jpg" alt="Natural pigment painting">
+        <div class="gallery-info">
+          <h2>Natural Pigment Painting</h2>
+          <p>Painting with biological and mineral color as material research.</p>
+        </div>
+      </article>
+
+      <article class="gallery-card">
+        <img src="assets/images/gallery/SCOBYleather.jpg" alt="SCOBY leather material sample">
+        <div class="gallery-info">
+          <h2>SCOBY Leather</h2>
+          <p>Cellulose-based biomaterial grown through fermentation.</p>
+        </div>
+      </article>
+
+      <article class="gallery-card">
+        <img src="assets/images/gallery/SkullMycelium.jpg" alt="Mycelium skull sculpture">
+        <div class="gallery-info">
+          <h2>Mycelium Skull</h2>
+          <p>Fungal growth shaped through mold-based biofabrication.</p>
+        </div>
+      </article>
+
+      <article class="gallery-card wide">
+        <img src="assets/images/gallery/WormBear.jpg" alt="Biomaterial bear with worm-like forms">
+        <div class="gallery-info">
+          <h2>Worm Bear</h2>
+          <p>Playful biomaterial sculpture exploring organismal form and texture.</p>
+        </div>
+      </article>
+
     </div>
   </section>
-
-  <div class="back-link-wrap">
-    <a class="back-link" href="index.html">← back to Bioart Lab</a>
-  </div>
 
 </body>
 </html>
